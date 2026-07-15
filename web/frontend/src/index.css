@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}

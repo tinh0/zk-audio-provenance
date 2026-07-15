@@ -1,0 +1,29 @@
+[package]
+name = "hyperveritas_impl"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+time = "0.1.12"
+ark-ff = { version = "^0.4.0", default-features = false }
+ark-bls12-381 = { version = "0.4.0", default-features = false, features = ["curve"] }
+ark-std = { version = "^0.4.0", default-features = false }
+ark-poly = { version = "^0.4.0", default-features = false }
+subroutines = { path = "../hyperplonk/subroutines" }
+arithmetic = { path = "../hyperplonk/arithmetic" }
+plonkish_backend = { path = "../plonkish_basefold/plonkish/plonkish_backend" }
+
+ark-ec = { version = "^0.4.0", default-features = false }
+transcript = { path = "../hyperplonk/transcript" }
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+rand_chacha = { version = "0.3.1", default-features = false }
+proc-status = { version = "*", optional = true }
+itertools = { version = "0.13.0" }
+subtle = "2.6.1"
+
+[features]
+default = ["native"]
+native = ["proc-status"]

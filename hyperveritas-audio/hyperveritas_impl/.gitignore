@@ -1,0 +1,24 @@
+# Rust build artifacts
+/target
+
+# Generated test images and verification files
+/images/*.json
+/images/V*.txt
+
+# Python virtual environment
+/hyperveritas/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

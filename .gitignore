@@ -1,1 +1,53 @@
+# OS files
 .DS_Store
+Thumbs.db
+
+# Rust build artifacts
+**/target/
+**/.cargo/
+
+# Large JSON data/benchmark files
+hyperveritas-audio/hyperveritas_impl/audio/*.json
+hyperveritas-audio/hyperveritas_impl/*.json
+web/wasm/*.json
+
+# WASM build output (regenerate with wasm-pack; see web/wasm/)
+web/wasm/pkg/
+web/frontend/src/wasm-pkg/
+
+# Tool clones created by install.sh (not part of this repo)
+hyperveritas-audio/comparisons/circom/
+hyperveritas-audio/comparisons/rapidsnark/
+
+# zk-Location generated outputs
+zk-location-float/output/
+zk-location-float/audio/**/output/
+
+# Node.js
+**/node_modules/
+
+# Python
+**/__pycache__/
+*.pyc
+*.pyo
+hyperveritas-audio/hyperveritas_impl/hyperveritas/
+
+# CMake / C++ builds
+**/build/
+**/build_prover/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Executables
+*.exe
+
+# Test caches
+.ieee754_test_cache/
+test_packages/
+
+# Local preview file (not part of the repo)
+README-preview.html

@@ -1,6 +1,6 @@
 [submodule "hyperplonk"]
-	path = hyperplonk
+	path = hyperveritas-audio/hyperplonk
 	url = https://github.com/glgreiner/hyperplonk.git
-[submodule "plonkish_basefold"]
-	path = plonkish_basefold
-	url = https://github.com/glgreiner/plonkish_basefold.git
+[submodule "zk-float-compiler"]
+	path = zk-float-compiler
+	url = https://github.com/tinh0/zk-float-compiler.git

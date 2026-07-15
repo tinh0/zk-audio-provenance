@@ -1,0 +1,32 @@
+.hv-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.hv-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 999px;
+  font: 600 12px/1 -apple-system, system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: transform 120ms ease, background-color 120ms ease;
+  z-index: 99999;
+}
+.hv-badge:hover { transform: scale(1.04); }
+
+.hv-icon { font-size: 14px; }
+.hv-text { white-space: nowrap; }
+
+.hv-pending  { background: rgba(30, 30, 30, 0.82); color: #fff; }
+.hv-checking { background: rgba(74, 85, 162, 0.92);  color: #fff; }
+.hv-ok       { background: rgba(27, 128, 52, 0.92);  color: #fff; }
+.hv-bad      { background: rgba(176, 27, 27, 0.92);  color: #fff; }
