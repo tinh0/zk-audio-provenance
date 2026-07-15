@@ -1,8 +1,8 @@
 # HyperVerITAS Prover Docker Image
 # Multi-stage build: compile Rust, then create slim runtime image
 #
-# Build: docker build -t hyperveritas-prover -f prover/Dockerfile ..
-# (Run from HyperVerITAS-clone directory, which contains hyperveritas_impl/, hyperplonk/, etc.)
+# Build: docker build -t hyperveritas-prover -f web/prover/Dockerfile .
+# (Run from the zk-audio-provenance repo root, which contains hyperveritas-audio/, web/, etc.)
 
 # ============================================================
 # Stage 1: Build all Rust example binaries
@@ -11,10 +11,11 @@ FROM rust:nightly-bookworm AS builder
 
 WORKDIR /build
 
-# Copy dependency source trees first (for better caching)
-COPY hyperplonk/ hyperplonk/
-COPY plonkish_basefold/ plonkish_basefold/
-COPY hyperveritas_impl/ hyperveritas_impl/
+# Copy dependency source trees first (for better caching); destination stays
+# flat so hyperveritas_impl's relative path deps (../hyperplonk) still resolve
+COPY hyperveritas-audio/hyperplonk/ hyperplonk/
+COPY hyperveritas-audio/plonkish_basefold/ plonkish_basefold/
+COPY hyperveritas-audio/hyperveritas_impl/ hyperveritas_impl/
 
 WORKDIR /build/hyperveritas_impl
 
@@ -49,7 +50,7 @@ RUN mkdir -p /work/images /work/audio
 WORKDIR /work
 
 # Copy entrypoint
-COPY prover/entrypoint.sh /entrypoint.sh
+COPY web/prover/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
